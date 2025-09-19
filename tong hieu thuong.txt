@@ -1,0 +1,43 @@
+using System;
+
+public class TinhToanSoNguyen
+{
+    public static void Main(string[] args)
+    {
+        // Khai báo các biến để lưu trữ hai số nguyên và kết quả
+        int soA, soB;
+        int tong, hieu, tich;
+        double thuong;
+
+        Console.WriteLine("--- Chương trình tính toán số nguyên ---");
+
+        // Nhập số nguyên thứ nhất
+        Console.Write("Nhập số nguyên thứ nhất: ");
+        soA = Convert.ToInt32(Console.ReadLine());
+
+        // Nhập số nguyên thứ hai
+        Console.Write("Nhập số nguyên thứ hai: ");
+        soB = Convert.ToInt32(Console.ReadLine());
+
+        // Tính tổng, hiệu và tích
+        tong = soA + soB;
+        hieu = soA - soB;
+        tich = soA * soB;
+
+        // Hiển thị kết quả
+        Console.WriteLine($"\nTổng của {soA} và {soB} là: {tong}");
+        Console.WriteLine($"Hiệu của {soA} và {soB} là: {hieu}");
+        Console.WriteLine($"Tích của {soA} và {soB} là: {tich}");
+
+        // Kiểm tra trường hợp chia cho 0 trước khi tính thương
+        if (soB != 0)
+        {
+            thuong = (double)soA / soB;
+            Console.WriteLine($"Thương của {soA} và {soB} là: {thuong}");
+        }
+        else
+        {
+            Console.WriteLine("Không thể thực hiện phép chia vì số chia bằng 0.");
+        }
+    }
+}
