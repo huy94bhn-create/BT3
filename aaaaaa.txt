@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BT3
+{
+    class BTTuan3_1
+    {
+        public static void Main(string[] args)
+        {
+            // Khai báo phương thức MergeHeapOneWay,
+        // nhưng không triển khai logic vì nó không có trong mã gốc.
+        // Bạn sẽ cần thêm logic hợp nhất heap vào đây.
+        void MergeHeapOneWay(int[] a, int left, int right)
+        {
+            // Thêm mã logic cho việc hợp nhất Heap tại đây.
+        }
+
+        // Phương thức Main là nơi chương trình bắt đầu chạy.
+        public static void Main(string[] args)
+        {
+            int n;
+
+            Console.WriteLine("--- CHUONG TRINH NHAP MANG ---");
+
+            // Yêu cầu người dùng nhập số lượng phần tử.
+            Console.Write("Nhap so luong phan tu: ");
+
+            // Đọc và kiểm tra dữ liệu nhập vào.
+            // Sử dụng int.TryParse để đảm bảo người dùng nhập một số hợp lệ.
+            if (!int.TryParse(Console.ReadLine(), out n))
+            {
+                Console.WriteLine("Du lieu khong hop le. Vui long khoi dong lai chuong trinh.");
+                return; // Kết thúc chương trình nếu dữ liệu không hợp lệ.
+            }
+
+            // Tạo một mảng mới với kích thước n.
+            int[] a = new int[n];
+
+            // Vòng lặp để nhập giá trị cho từng phần tử của mảng.
+            for (int i = 0; i < n; i++)
+            {
+                // Sử dụng nối chuỗi để in thông báo. Đây là cách tương thích với các phiên bản C# cũ.
+                Console.Write("Nhap gia tri cho phan tu thu " + i + ": ");
+
+                // Đọc giá trị và chuyển đổi sang số nguyên.
+                // Vẫn dùng TryParse để đảm bảo tính ổn định.
+                if (!int.TryParse(Console.ReadLine(), out a[i]))
+                {
+                    Console.WriteLine("Gia tri khong hop le. Vui long nhap lai.");
+                    i--; // Giảm i để người dùng nhập lại giá trị cho cùng phần tử.
+                }
+            }
+
+            // In ra các phần tử đã nhập để kiểm tra.
+            Console.WriteLine("\n--- CAC PHAN TU TRONG MANG LA ---");
+            // Vòng lặp foreach là cách đơn giản để duyệt qua tất cả các phần tử.
+            foreach (int item in a)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("\nChuong trinh da hoan thanh. Nhan phim bat ky de thoat.");
+            Console.ReadKey(); // Giữ cửa sổ console mở cho đến khi người dùng nhấn một phím.
+        }
+        }
+
+        
+    }
+}
