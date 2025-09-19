@@ -1,0 +1,36 @@
+using System;
+
+public class AgeCalculator
+{
+    public static int CalculateAge(DateTime birthDate)
+    {
+        // Lấy ngày hiện tại
+        DateTime today = DateTime.Today;
+
+        // Tính số tuổi dựa vào năm
+        int age = today.Year - birthDate.Year;
+
+        // Kiểm tra nếu sinh nhật chưa đến trong năm nay
+        if (birthDate > today.AddYears(-age))
+        {
+            age--;
+        }
+
+        return age;
+    }
+
+    public static void Main(string[] args)
+    {
+        // Nhập ngày, tháng, năm sinh
+        int day = 15;
+        int month = 5;
+        int year = 1990;
+
+        // Tạo đối tượng DateTime từ ngày sinh
+        DateTime birthDate = new DateTime(year, month, day);
+
+        // Gọi phương thức và in kết quả
+        int age = CalculateAge(birthDate);
+        Console.WriteLine($"Bạn sinh ngày {birthDate:dd/MM/yyyy} và hiện tại {age} tuổi.");
+    }
+}
